@@ -618,6 +618,7 @@ public:
 	BOOL TeamStacked_OrigFunc(int newTeam_id, int curTeam_id);
 	void PlayerGotWeapon_OrigFunc(CBasePlayer *pPlayer, CBasePlayerItem *pWeapon);
 	void SendDeathMessage_OrigFunc(CBaseEntity *pKiller, CBasePlayer *pVictim, CBasePlayer *pAssister, entvars_t *pevInflictor, const char *killerWeaponName, int iDeathMessageFlags, int iRarityOfKill);
+	BOOL CheckTimeLimit_OrigFunc();
 #endif
 
 public:
@@ -747,6 +748,8 @@ public:
 	CBasePlayer *CheckAssistsToKill(CBaseEntity *pKiller, CBasePlayer *pVictim, bool &bFlashAssist);
 
 	void GiveDefuserToRandomPlayer();
+
+	VFUNC BOOL CheckTimeLimit();
 
 private:
 	void MarkLivingPlayersOnTeamAsNotReceivingMoneyNextRound(int iTeam);

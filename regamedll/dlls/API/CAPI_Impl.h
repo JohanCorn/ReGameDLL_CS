@@ -749,6 +749,10 @@ typedef IHookChainRegistryClassImpl<void, CBasePlayer> CReGameHookRegistry_CBase
 typedef IHookChainClassImpl<void, CBasePlayer, BOOL> CReGameHook_CBasePlayer_RemoveAllItems;
 typedef IHookChainRegistryClassImpl<void, CBasePlayer, BOOL> CReGameHookRegistry_CBasePlayer_RemoveAllItems;
 
+// CHalfLifeMultiplay::CheckTimeLimit hook
+typedef IHookChainClassImpl<BOOL, class CHalfLifeMultiplay> CReGameHook_CSGameRules_CheckTimeLimit;
+typedef IHookChainRegistryClassEmptyImpl<BOOL, class CHalfLifeMultiplay> CReGameHookRegistry_CSGameRules_CheckTimeLimit;
+
 class CReGameHookchains: public IReGameHookchains {
 public:
 	// CBasePlayer virtual
@@ -911,6 +915,8 @@ public:
 	CReGameHookRegistry_CBasePlayer_Observer_Think m_CBasePlayer_Observer_Think;
 	CReGameHookRegistry_CBasePlayer_RemoveAllItems m_CBasePlayer_RemoveAllItems;
 
+	CReGameHookRegistry_CSGameRules_CheckTimeLimit m_CSGameRules_CheckTimeLimit;
+
 public:
 	virtual IReGameHookRegistry_CBasePlayer_Spawn *CBasePlayer_Spawn();
 	virtual IReGameHookRegistry_CBasePlayer_Precache *CBasePlayer_Precache();
@@ -1070,6 +1076,8 @@ public:
 	virtual IReGameHookRegistry_CBasePlayer_PlayerDeathThink *CBasePlayer_PlayerDeathThink();
 	virtual IReGameHookRegistry_CBasePlayer_Observer_Think *CBasePlayer_Observer_Think();
 	virtual IReGameHookRegistry_CBasePlayer_RemoveAllItems *CBasePlayer_RemoveAllItems();
+
+	virtual IReGameHookRegistry_CSGameRules_CheckTimeLimit *CSGameRules_CheckTimeLimit();
 };
 
 extern CReGameHookchains g_ReGameHookchains;

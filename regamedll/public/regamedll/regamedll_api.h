@@ -628,6 +628,10 @@ typedef IHookChainRegistryClass<void, class CBasePlayer> IReGameHookRegistry_CBa
 typedef IHookChainClass<void, class CBasePlayer, BOOL> IReGameHook_CBasePlayer_RemoveAllItems;
 typedef IHookChainRegistryClass<void, class CBasePlayer, BOOL> IReGameHookRegistry_CBasePlayer_RemoveAllItems;
 
+// CHalfLifeMultiplay::CheckTimeLimit hook
+typedef IHookChain<BOOL> IReGameHook_CSGameRules_CheckTimeLimit;
+typedef IHookChainRegistry<BOOL> IReGameHookRegistry_CSGameRules_CheckTimeLimit;
+
 class IReGameHookchains {
 public:
 	virtual ~IReGameHookchains() {}
@@ -790,6 +794,8 @@ public:
 	virtual IReGameHookRegistry_CBasePlayer_PlayerDeathThink *CBasePlayer_PlayerDeathThink() = 0;
 	virtual IReGameHookRegistry_CBasePlayer_Observer_Think *CBasePlayer_Observer_Think() = 0;
 	virtual IReGameHookRegistry_CBasePlayer_RemoveAllItems *CBasePlayer_RemoveAllItems() = 0;
+
+	virtual IReGameHookRegistry_CSGameRules_CheckTimeLimit *CSGameRules_CheckTimeLimit() = 0;
 };
 
 struct ReGameFuncs_t {
