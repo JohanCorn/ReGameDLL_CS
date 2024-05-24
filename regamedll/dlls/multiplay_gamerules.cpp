@@ -2649,7 +2649,7 @@ bool CHalfLifeMultiplay::CheckGameOver()
 	return false;
 }
 
-LINK_HOOK_CLASS_CUSTOM_CHAIN(BOOL, CHalfLifeMultiplay, CSGameRules, CheckTimeLimit)
+LINK_HOOK_CLASS_CUSTOM_CHAIN2(BOOL, CHalfLifeMultiplay, CSGameRules, CheckTimeLimit)
 
 BOOL EXT_FUNC CHalfLifeMultiplay::__API_HOOK(CheckTimeLimit)()
 {
@@ -4249,7 +4249,7 @@ int CHalfLifeMultiplay::WeaponShouldRespawn(CBasePlayerItem *pWeapon)
 	return GR_WEAPON_RESPAWN_YES;
 }
 
-LINK_HOOK_CLASS_CUSTOM_CHAIN2(BOOL, CHalfLifeMultiplay, CSGameRules, CanHavePlayerItem, (CBasePlayer *pPlayer, CBasePlayerItem *pItem), pPlayer, pItem)
+LINK_HOOK_CLASS_CUSTOM_CHAIN(BOOL, CHalfLifeMultiplay, CSGameRules, CanHavePlayerItem, (CBasePlayer *pPlayer, CBasePlayerItem *pItem), pPlayer, pItem)
 
 // Returns FALSE if the player is not allowed to pick up this weapon
 BOOL EXT_FUNC CHalfLifeMultiplay::__API_HOOK(CanHavePlayerItem)(CBasePlayer *pPlayer, CBasePlayerItem *pItem)
