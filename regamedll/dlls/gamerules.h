@@ -749,8 +749,6 @@ public:
 
 	void GiveDefuserToRandomPlayer();
 
-	VFUNC BOOL CheckTimeLimit();
-
 private:
 	void MarkLivingPlayersOnTeamAsNotReceivingMoneyNextRound(int iTeam);
 
