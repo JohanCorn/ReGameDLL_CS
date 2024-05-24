@@ -2649,7 +2649,7 @@ bool CHalfLifeMultiplay::CheckGameOver()
 	return false;
 }
 
-LINK_HOOK_CLASS_CUSTOM2_CHAIN2(BOOL, CHalfLifeMultiplay, CSGameRules, CheckTimeLimit)
+LINK_HOOK_CLASS_CUSTOM_CHAIN2(BOOL, CHalfLifeMultiplay, CSGameRules, CheckTimeLimit)
 
 BOOL EXT_FUNC CHalfLifeMultiplay::__API_HOOK(CheckTimeLimit)()
 {
