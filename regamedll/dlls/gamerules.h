@@ -674,7 +674,6 @@ public:
 
 	// Check various conditions to end the map.
 	bool CheckGameOver();
-	bool CheckTimeLimit();
 	bool CheckFragLimit();
 	bool CheckMaxRounds();
 	bool CheckWinLimit();
@@ -748,6 +747,8 @@ public:
 	CBasePlayer *CheckAssistsToKill(CBaseEntity *pKiller, CBasePlayer *pVictim, bool &bFlashAssist);
 
 	void GiveDefuserToRandomPlayer();
+
+	VFUNC bool CheckTimeLimit();
 
 private:
 	void MarkLivingPlayersOnTeamAsNotReceivingMoneyNextRound(int iTeam);
