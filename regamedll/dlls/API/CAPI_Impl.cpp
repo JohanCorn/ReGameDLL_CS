@@ -343,6 +343,12 @@ GAMEHOOK_REGISTRY(SendSayMessage);
 
 GAMEHOOK_REGISTRY(CBasePlayer_HandleSignals);
 
+GAMEHOOK_REGISTRY(CSGameRules_CheckGameOver);
+GAMEHOOK_REGISTRY(CSGameRules_CheckTimeLimit);
+GAMEHOOK_REGISTRY(CSGameRules_CheckFragLimit);
+GAMEHOOK_REGISTRY(CSGameRules_CheckMaxRounds);
+GAMEHOOK_REGISTRY(CSGameRules_CheckWinLimit);
+
 int CReGameApi::GetMajorVersion() {
 	return REGAMEDLL_API_VERSION_MAJOR;
 }
