@@ -640,6 +640,26 @@ typedef IHookChainRegistryClass<void, class CBasePlayer, class CBasePlayer *, fl
 typedef IHookChain<void, CBasePlayer *, const char *, BOOL, const char*, const char*, const char*, bool, const char*, bool> IReGameHook_SendSayMessage;
 typedef IHookChainRegistry<void, CBasePlayer *, const char *, BOOL, const char*, const char*, const char*, bool, const char*, bool> IReGameHookRegistry_SendSayMessage;
 
+// CHalfLifeMultiplay::CheckGameOver hook
+typedef IHookChain<bool> IReGameHook_CSGameRules_CheckGameOver;
+typedef IHookChainRegistry<bool> IReGameHookRegistry_CSGameRules_CheckGameOver;
+
+// CHalfLifeMultiplay::CheckTimeLimit hook
+typedef IHookChain<bool> IReGameHook_CSGameRules_CheckTimeLimit;
+typedef IHookChainRegistry<bool> IReGameHookRegistry_CSGameRules_CheckTimeLimit;
+
+// CHalfLifeMultiplay::CheckFragLimit hook
+typedef IHookChain<bool> IReGameHook_CSGameRules_CheckFragLimit;
+typedef IHookChainRegistry<bool> IReGameHookRegistry_CSGameRules_CheckFragLimit;
+
+// CHalfLifeMultiplay::CheckMaxRounds hook
+typedef IHookChain<bool> IReGameHook_CSGameRules_CheckMaxRounds;
+typedef IHookChainRegistry<bool> IReGameHookRegistry_CSGameRules_CheckMaxRounds;
+
+// CHalfLifeMultiplay::CheckWinLimit hook
+typedef IHookChain<bool> IReGameHook_CSGameRules_CheckWinLimit;
+typedef IHookChainRegistry<bool> IReGameHookRegistry_CSGameRules_CheckWinLimit;
+
 class IReGameHookchains {
 public:
 	virtual ~IReGameHookchains() {}
@@ -807,6 +827,12 @@ public:
 	virtual IReGameHookRegistry_CBasePlayer_TakeDamageImpulse *CBasePlayer_TakeDamageImpulse() = 0;
 
 	virtual IReGameHookRegistry_SendSayMessage *SendSayMessage() = 0;
+
+	virtual IReGameHookRegistry_CSGameRules_CheckGameOver *CSGameRules_CheckGameOver() = 0;
+	virtual IReGameHookRegistry_CSGameRules_CheckTimeLimit *CSGameRules_CheckTimeLimit() = 0;
+	virtual IReGameHookRegistry_CSGameRules_CheckFragLimit *CSGameRules_CheckFragLimit() = 0;
+	virtual IReGameHookRegistry_CSGameRules_CheckMaxRounds *CSGameRules_CheckMaxRounds() = 0;
+	virtual IReGameHookRegistry_CSGameRules_CheckWinLimit *CSGameRules_CheckWinLimit() = 0;
 };
 
 struct ReGameFuncs_t {
